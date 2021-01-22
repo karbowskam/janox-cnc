@@ -1,6 +1,6 @@
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -12,40 +12,84 @@ body {
 }
 
 .description {
-  font-size: 30px;
+  font-size: 20px;
   font-family: "Mukta", sans-serif;
-  display: flex;
   text-align: center;
-  padding: 50px;
-  background-color: rgba(7, 0, 0, 0.205);
+  padding: 20px;
+  background-color: #fff;
+  color: rgb(0, 1, 7);
+
+  &__header {
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+    padding-bottom: 25px;
+  }
+
+  &__parapgraph {
+    display: inline-block;
+    width: 100%;
+  }
 }
 
 .navigation {
-  width: 100%;
-  background-color: rgb(236, 225, 225);
-  padding: 15px;
+  position: relative;
+  z-index: 100;
+  width: 80%;
+  margin: 0 auto;
+  background: #fff;
+  padding: 50px 0;
+  box-shadow: 0 5px 0 #dedede;
+
   &__list {
-    display: block;
-    border-right: 1px solid gray;
-    padding: 0 10px;
+    list-style: none;
+    text-align: center;
   }
+
   &__link {
-    color: #666;
-    font-style: bold 0.8em Arial, sans-serif;
-    text-decoration: none;
+    display: block;
     padding: 15px;
+    text-decoration: none;
+    color: #aaa;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0 10px;
+    position: relative;
   }
+
+  &__link::before {
+    transition: all 0.5s;
+  }
+
+  &__link::after {
+    transition: all 0.5s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: ".";
+    color: transparent;
+    background: #333;
+    height: 1px;
+  }
+
   &__link:hover {
-    color: #333;
+    color: #555;
   }
+
+  &__link:hover::after {
+    width: 100%;
+  }
+
   &__item {
-    display: inline;
-    border-right: 1px solid gray;
+    display: inline-block;
     padding: 0 10px;
   }
 }
 
-$numOfSlides: 5;
+$numOfSlides: 3;
 $slidingAT: 1.3s;
 $controlSize: 60px;
 
@@ -104,7 +148,7 @@ $controlSize: 60px;
         }
       }
 
-      &:after {
+      &::after {
         content: "";
         position: absolute;
         left: 0;
@@ -115,16 +159,16 @@ $controlSize: 60px;
         transition: background-color 0.3s;
       }
 
-      .slider__control:hover &:after {
+      .slider__control:hover &::after {
         background-color: #fff;
       }
 
       .slider__control.a--rotation & {
-        &:after {
+        &::after {
           animation: arrowLineRotation 0.49s;
         }
 
-        &:nth-child(1):after {
+        &:nth-child(1)::after {
           animation: arrowLineRotationRev 0.49s;
         }
       }
@@ -173,12 +217,13 @@ $controlSize: 60px;
   @for $i from 1 through $numOfSlides {
     &:nth-child(#{$i}) {
       .slide__inner {
-        background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/onepgscr-#{$i+1}.jpg");
+        background-image: url(../img/#{$i+1}.jpg);
       }
     }
   }
 
   &__inner {
+    background-image: url(../img/2.jpg);
     position: absolute;
     left: 50%;
     top: 50%;
@@ -189,7 +234,7 @@ $controlSize: 60px;
     background-size: cover;
     background-position: center center;
 
-    &:before {
+    &::before {
       content: "";
       position: absolute;
       left: 0;
