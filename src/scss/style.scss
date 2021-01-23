@@ -32,13 +32,24 @@ body {
   }
 }
 
+.header {
+  background-color: rgb(144, 184, 230);
+}
+
+.logo {
+  display: block;
+  width: 20%;
+  height: 20%;
+  margin: 0 auto;
+}
+
 .navigation {
   position: relative;
   z-index: 100;
   width: 80%;
   margin: 0 auto;
   background: #fff;
-  padding: 50px 0;
+  padding: 17px 0;
   box-shadow: 0 5px 0 #dedede;
 
   &__list {
