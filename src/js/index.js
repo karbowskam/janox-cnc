@@ -7,18 +7,21 @@ var left = document.getElementById("left");
 var right = document.getElementById("right");
 var pagePrefix = "slide";
 var pageShift = 500;
-var transitionPrefix = "circle";
+var transitionPrefixRight = "circleRight";
+var transitionPrefixLeft = "circleLeft";
 var svg = true;
+var numOfSlides = 4;
+var numOfCircle = 18;
 
 function leftSlide() {
 	if (click) {
-		if (curpage == 1) curpage = 5;
+		if (curpage == 1) curpage = numOfSlides + 1;
 		console.log("woek");
 		sliding = true;
 		curpage--;
 		svg = true;
 		click = false;
-		for (k = 1; k <= 4; k++) {
+		for (var k = 1; k <= numOfSlides; k++) {
 			var a1 = document.getElementById(pagePrefix + k);
 			a1.className += " tran";
 		}
@@ -26,7 +29,7 @@ function leftSlide() {
 			move();
 		}, 200);
 		setTimeout(() => {
-			for (k = 1; k <= 4; k++) {
+			for (k = 1; k <= numOfSlides; k++) {
 				var a1 = document.getElementById(pagePrefix + k);
 				a1.classList.remove("tran");
 			}
@@ -36,13 +39,13 @@ function leftSlide() {
 
 function rightSlide() {
 	if (click) {
-		if (curpage == 4) curpage = 0;
+		if (curpage == numOfSlides) curpage = 0;
 		console.log("woek");
 		sliding = true;
 		curpage++;
 		svg = false;
 		click = false;
-		for (var k = 1; k <= 4; k++) {
+		for (var k = 1; k <= numOfSlides; k++) {
 			var a1 = document.getElementById(pagePrefix + k);
 			a1.className += " tran";
 		}
@@ -50,7 +53,7 @@ function rightSlide() {
 			move();
 		}, 200);
 		setTimeout(() => {
-			for (k = 1; k <= 4; k++) {
+			for (k = 1; k <= numOfSlides; k++) {
 				var a1 = document.getElementById(pagePrefix + k);
 				a1.classList.remove("tran");
 			}
@@ -62,22 +65,22 @@ function move() {
 	if (sliding) {
 		sliding = false;
 		if (svg) {
-			for (j = 1; j <= 9; j++) {
-				var c = document.getElementById(transitionPrefix + j);
+			for (var j = 1; j <= numOfCircle; j++) {
+				var c = document.getElementById(transitionPrefixLeft + j);
 				c.classList.remove("steap");
-				c.setAttribute("class", transitionPrefix + j + " streak");
+				c.setAttribute("class", transitionPrefixLeft + j + " streak");
 				console.log("streak");
 			}
 		} else {
-			for (var j = 10; j <= 18; j++) {
-				var c = document.getElementById(transitionPrefix + j);
+			for (var j = 1; j <= numOfCircle; j++) {
+				var c = document.getElementById(transitionPrefixRight + j);
 				c.classList.remove("steap");
-				c.setAttribute("class", transitionPrefix + j + " streak");
+				c.setAttribute("class", transitionPrefixRight + j + " streak");
 				console.log("streak");
 			}
 		}
 		setTimeout(() => {
-			for (var i = 1; i <= 4; i++) {
+			for (var i = 1; i <= numOfSlides; i++) {
 				if (i == curpage) {
 					var a = document.getElementById(pagePrefix + i);
 					a.className += " up1";
@@ -94,16 +97,16 @@ function move() {
 
 		setTimeout(() => {
 			if (svg) {
-				for (j = 1; j <= 9; j++) {
-					var c = document.getElementById(transitionPrefix + j);
+				for (j = 1; j <= numOfCircle; j++) {
+					var c = document.getElementById(transitionPrefixLeft + j);
 					c.classList.remove("streak");
-					c.setAttribute("class", transitionPrefix + j + " steap");
+					c.setAttribute("class", transitionPrefixLeft + j + " steap");
 				}
 			} else {
-				for (j = 10; j <= 18; j++) {
-					var c = document.getElementById(transitionPrefix + j);
+				for (j = 1; j <= numOfCircle; j++) {
+					var c = document.getElementById(transitionPrefixRight + j);
 					c.classList.remove("streak");
-					c.setAttribute("class", transitionPrefix + j + " steap");
+					c.setAttribute("class", transitionPrefixRight + j + " steap");
 				}
 				sliding = true;
 			}
@@ -129,11 +132,6 @@ document.onkeydown = e => {
 		rightSlide();
 	}
 };
-
-//for codepen header
-// setTimeout(() => {
-// 	rightSlide();
-// }, 500);
 
 
 console.log("Hello world");

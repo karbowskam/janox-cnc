@@ -103,12 +103,12 @@ body {
 $circle: 'circle';
 $slide: 'slide';
 $images: (
-	'https://images.unsplash.com/photo-1483068612337-c045daaca40e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&s=6de8746a693acc34ebe9e9a15c4c18d1',
-	'https://images.unsplash.com/photo-1489914099268-1dad649f76bf?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&s=f21f40bb93bae58300e83f7f72ebb5a5',
-	'https://images.unsplash.com/photo-1490100667990-4fced8021649?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&s=247f52de1a292b8a1877b0c7dd77a291',
-	'https://images.unsplash.com/photo-1494783404829-a93883e74b68?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&s=413f5f5c41f4db69a1474d92419601ac'
+  "../img/1.jpg",
+  "../img/2.jpg",
+  "../img/3.jpg",
+  "../img/4.jpg"
 );
-$width: 681px;
+$width: 100%;
 $height: 384px;
 @import url( 'https://fonts.googleapis.com/css?family=Heebo:800');
 
@@ -120,13 +120,10 @@ $height: 384px;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	margin: auto auto;
-	overflow: hidden;
-	position: absolute;
-	border-radius: 16px;
-	-webkit-box-shadow: 0 0 88px 5px rgba(0, 0, 0, 0.75);
-	-moz-box-shadow: 0 0 88px 5px rgba(0, 0, 0, 0.75);
-	box-shadow: 0 0 88px 5px rgba(0, 0, 0, 0.75);
+	margin: 15px auto;
+	//overflow: hidden;
+  position: relative;
+  display: block;
 }
 
 svg {
@@ -158,15 +155,14 @@ button {
 circle {
 	stroke: #fff;
 	fill: none;
-	transition: 0.3s;
+	transition: 0.5s;
 }
 
 #svg1 {
 	circle {
 		transition-timing-function: linear;
-	}
+  }
 }
-
 #svg2 {
 	circle {
 		transition-timing-function: linear;
@@ -188,7 +184,8 @@ circle {
 }
 
 .right {
-	margin-left: 628px;
+  position: absolute;
+  right: 0.5%;
 	margin-top: 168px;
 	border: 1px solid #849494;
 	background-color: transparent;
@@ -208,16 +205,12 @@ circle {
 		background-color: #fff;
 	}
 }
-@for $i from 1 through 9 {
+@for $i from 1 through 18 {
 	.#{$circle}#{$i} {
-		transition-delay: ($i/20)+s;
+		transition-delay: ($i/100)+s;
 	}
 }
-@for $i from 1 through 9 {
-	.#{$circle}#{$i + 9} {
-		transition-delay: ($i/20)+s;
-	}
-}
+
 @each $image in $images {
 	$j: index($images, $image);
 
@@ -228,7 +221,7 @@ circle {
 
 .slider {
 	position: absolute;
-	width: 400%;
+	width: 100%;
 	height: 100%;
 	background: #000;
 	display: inline-flex;
@@ -245,7 +238,7 @@ circle {
 	font-weight: 800;
 	font-family: 'Heebo', sans-serif;
 	text-align: center;
-	width: 25%;
+	width: 100%;
 	height: 100%;
 	z-index: 10;
 	transition: 1.4s;
