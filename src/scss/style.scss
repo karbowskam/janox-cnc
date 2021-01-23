@@ -6,9 +6,11 @@
   padding: 0;
 }
 
-body {
-  overflow: visible;
+$background: hsla(217, 99%, 65%, 0.616);
+
+.body {
   font-family: Helvetica, Arial, sans-serif;
+  background-color: rgb(70, 62, 62);
 }
 
 .description {
@@ -33,7 +35,7 @@ body {
 }
 
 .header {
-  background-color: rgb(144, 184, 230);
+  background-color: $background;
 }
 
 .logo {
@@ -269,5 +271,38 @@ circle {
 @media (max-width: 700px) {
   .parent {
     margin-left: 1%;
+  }
+}
+
+.footer {
+  display: grid;
+  background-color: $background;
+  grid-template-columns: 3fr 2fr;
+}
+
+.about-us {
+  &__header {
+    padding: 10px;
+    text-align: center;
+    color: #251605;
+    font-size: 30px;
+  }
+
+  &__description {
+    padding: 10px;
+    text-align: center;
+  }
+}
+
+.contact {
+  &__header {
+    padding: 10px;
+    text-align: center;
+  }
+
+  &__list {
+    padding: 10px;
+    text-align: center;
+    list-style-type: none;
   }
 }
