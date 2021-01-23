@@ -278,9 +278,12 @@ circle {
   display: grid;
   background-color: $background;
   grid-template-columns: 3fr 2fr;
+  column-gap: 50px;
+  position: relative;
 }
 
 .about-us {
+  position: relative;
   &__header {
     padding: 10px;
     text-align: center;
@@ -295,6 +298,7 @@ circle {
 }
 
 .contact {
+  position: relative;
   &__header {
     padding: 10px;
     text-align: center;
