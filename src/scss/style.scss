@@ -7,31 +7,13 @@
 }
 
 $background: hsla(240, 0%, 49%, 0.733);
+$margin-gap: 15px;
 
 .body {
   font-family: Helvetica, Arial, sans-serif;
   background-color: rgb(70, 62, 62);
-}
-
-.description {
-  font-size: 20px;
-  font-family: "Mukta", sans-serif;
-  text-align: center;
-  padding: 20px;
-  background-color: #fff;
-  color: rgb(0, 1, 7);
-
-  &__header {
-    display: inline-block;
-    width: 100%;
-    background-color: #fff;
-    padding-bottom: 25px;
-  }
-
-  &__parapgraph {
-    display: inline-block;
-    width: 100%;
-  }
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .header {
@@ -102,6 +84,35 @@ $background: hsla(240, 0%, 49%, 0.733);
   &__item {
     display: inline-block;
     padding: 0 10px;
+  }
+}
+
+.offers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: $margin-gap;
+  row-gap: $margin-gap;
+  padding-bottom: $margin-gap;
+
+  &__box {
+    // TODO: change these colors
+    background-color: white;
+    color: black;
+  }
+
+  &__header {
+    // TODO: change these colors
+    background-color: white;
+    color: black;
+    padding: 10px;
+    text-align: center;
+  }
+
+  &__description {
+    // TODO: change these colors
+    background-color: white;
+    color: black;
+    padding: 20px;
   }
 }
 
@@ -287,6 +298,7 @@ circle {
 
 .about-us {
   position: relative;
+
   &__header {
     padding: 10px;
     text-align: center;
@@ -302,6 +314,7 @@ circle {
 
 .contact {
   position: relative;
+
   &__header {
     padding: 10px;
     text-align: center;
