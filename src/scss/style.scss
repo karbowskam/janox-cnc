@@ -290,8 +290,6 @@ circle {
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 50px;
   position: relative;
-  border-left: 30px;
-  border-color: rgba(222, 184, 104, 0.32);
 
   @media (max-width: $mobile-max-width) {
     grid-template-columns: 1fr;
