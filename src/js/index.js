@@ -3,11 +3,16 @@ import "../scss/style.scss";
 var curpage = 1;
 var sliding = false;
 var click = true;
-var left = document.getElementById("left");
-var right = document.getElementById("right");
+var left = document.getElementById("slider__arrow--left");
+var right = document.getElementById("slider__arrow--right");
 var pagePrefix = "slide";
 var transitionPrefixRight = "circle-right";
 var transitionPrefixLeft = "circle-left";
+var transitionPrefixClass = "slider__circle";
+var classStreak = "slider__streak";
+var classTran = "slider__tran";
+var classSteap = "slider__steap";
+var classUp = "slider__up";
 var svg = true;
 var numOfSlides = 4;
 var numOfCircle = 18;
@@ -22,7 +27,7 @@ function leftSlide() {
     click = false;
     for (var k = 1; k <= numOfSlides; k++) {
       var a1 = document.getElementById(pagePrefix + k);
-      a1.className += " tran";
+      a1.className += " " + classTran;
     }
     setTimeout(() => {
       move();
@@ -30,7 +35,7 @@ function leftSlide() {
     setTimeout(() => {
       for (k = 1; k <= numOfSlides; k++) {
         var a1 = document.getElementById(pagePrefix + k);
-        a1.classList.remove("tran");
+        a1.classList.remove(classTran);
       }
     }, 1400);
   }
@@ -46,7 +51,7 @@ function rightSlide() {
     click = false;
     for (var k = 1; k <= numOfSlides; k++) {
       var a1 = document.getElementById(pagePrefix + k);
-      a1.className += " tran";
+      a1.className += " " + classTran;
     }
     setTimeout(() => {
       move();
@@ -54,7 +59,7 @@ function rightSlide() {
     setTimeout(() => {
       for (k = 1; k <= numOfSlides; k++) {
         var a1 = document.getElementById(pagePrefix + k);
-        a1.classList.remove("tran");
+        a1.classList.remove(classTran);
       }
     }, 1400);
   }
@@ -68,26 +73,26 @@ function move() {
     if (svg) {
       for (j = 1; j <= numOfCircle; j++) {
         c = document.getElementById(transitionPrefixLeft + j);
-        c.classList.remove("steap");
-        c.setAttribute("class", transitionPrefixLeft + j + " streak");
-        console.log("streak");
+        c.classList.remove(classSteap);
+        c.setAttribute("class", transitionPrefixLeft + j + " " + classStreak);
+        console.log(classStreak);
       }
     } else {
       for (j = 1; j <= numOfCircle; j++) {
         c = document.getElementById(transitionPrefixRight + j);
-        c.classList.remove("steap");
-        c.setAttribute("class", transitionPrefixRight + j + " streak");
-        console.log("streak");
+        c.classList.remove(classSteap);
+        c.setAttribute("class", transitionPrefixClass  + " " + classStreak);
+        console.log(classStreak);
       }
     }
     setTimeout(() => {
       for (var i = 1; i <= numOfSlides; i++) {
         if (i == curpage) {
           var a = document.getElementById(pagePrefix + i);
-          a.className += " up1";
+          a.className += " " + classUp;
         } else {
           var b = document.getElementById(pagePrefix + i);
-          b.classList.remove("up1");
+          b.classList.remove(classUp);
         }
       }
       sliding = true;
@@ -101,14 +106,14 @@ function move() {
       if (svg) {
         for (j = 1; j <= numOfCircle; j++) {
           c = document.getElementById(transitionPrefixLeft + j);
-          c.classList.remove("streak");
-          c.setAttribute("class", transitionPrefixLeft + j + " steap");
+          c.classList.remove(classStreak);
+          c.setAttribute("class", transitionPrefixLeft + j + " " + classSteap);
         }
       } else {
         for (j = 1; j <= numOfCircle; j++) {
           c = document.getElementById(transitionPrefixRight + j);
-          c.classList.remove("streak");
-          c.setAttribute("class", transitionPrefixRight + j + " steap");
+          c.classList.remove(classStreak);
+          c.setAttribute("class", transitionPrefixClass  + " " + classSteap);
         }
         sliding = true;
       }
