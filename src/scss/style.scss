@@ -18,10 +18,10 @@ $margin-gap: 15px;
 }
 
 .header {
-  background-color: $background;
   padding: 15px;
   display: grid;
   grid-template-columns: 1fr 3fr;
+  background-color: #555f61;
 }
 
 .logo {
@@ -100,23 +100,21 @@ $margin-gap: 15px;
   }
 
   &__box {
-    // TODO: change these colors
-    background-color: white;
-    color: black;
+    background-color: #555f61;
+    color: rgb(253, 253, 253);
+
+    &:hover {
+      -webkit-box-shadow: 0 0 18px 7px rgba(222, 184, 104, 0.32);
+      box-shadow: 0 0 18px 7px rgba(222, 184, 104, 0.32);
+    }
   }
 
   &__header {
-    // TODO: change these colors
-    background-color: white;
-    color: black;
     padding: 10px;
     text-align: center;
   }
 
   &__description {
-    // TODO: change these colors
-    background-color: white;
-    color: black;
     padding: 20px;
   }
 }
@@ -289,7 +287,6 @@ circle {
 
 .footer {
   display: grid;
-  background-color: white;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 50px;
   position: relative;
@@ -301,21 +298,25 @@ circle {
 
 .about-us {
   position: relative;
+  background-color: #555f61;
 
   &__header {
     padding: 10px;
     text-align: center;
-    color: #251605;
+    color: #fff;
     font-size: 30px;
   }
 
   &__description {
     padding: 10px;
     text-align: center;
+    color: white;
   }
 }
 
 .map {
+  background-color: #555f61;
+
   &__address {
     width: 100%;
     height: 100%;
@@ -325,10 +326,12 @@ circle {
 
 .contact {
   position: relative;
+  background-color: #555f61;
 
   &__header {
     padding: 10px;
     text-align: center;
+    color: white;
   }
 
   &__list {
@@ -344,14 +347,17 @@ circle {
   &__icon {
     font-weight: bold;
     margin-right: 5px;
+    color: white;
   }
 
   &__details {
     text-align: left;
     text-decoration: none;
+    color: white;
   }
 
   &__address {
     text-align: center;
+    color: white;
   }
 }
