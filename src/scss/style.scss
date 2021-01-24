@@ -9,6 +9,7 @@
 $mobile-max-width: 700px;
 $background: hsla(240, 0%, 49%, 0.733);
 $margin-gap: 15px;
+$sec-color:  rgba(222, 184, 104, 0.32);
 
 .body {
   font-family: Helvetica, Arial, sans-serif;
@@ -33,6 +34,7 @@ $margin-gap: 15px;
   display: grid;
   grid-template-columns: 1fr 3fr;
   background-color: #555f61;
+  margin-bottom: 15px;
 }
 
 .logo {
@@ -355,8 +357,8 @@ ______   __                              __
 */
 .footer {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 50px;
+  grid-template-rows: 1fr 2fr;
+  row-gap: $margin-gap;
   position: relative;
 
   @media (max-width: $mobile-max-width) {
@@ -367,16 +369,19 @@ ______   __                              __
 .about-us {
   position: relative;
   background-color: #555f61;
+  border-left: 80px solid;
+  border-right: 80px solid;
+  border-color: rgb(39, 39, 39);
 
   &__header {
-    padding: 10px;
+    padding-top: 18px;
     text-align: center;
     color: #fff;
     font-size: 30px;
   }
 
   &__description {
-    padding: 10px;
+    padding: 30px;
     text-align: center;
     color: white;
   }
@@ -395,21 +400,26 @@ ______   __                              __
 .contact {
   position: relative;
   background-color: #555f61;
+  border-left: 170px solid;
+  border-right: 170px solid;
+  border-color: rgb(39, 39, 39);
+
+  &__break {
+    width: 80px;
+    margin: 0 auto;
+    background: rgba(222, 184, 104, 0.32);
+  }
 
   &__header {
-    padding: 10px;
+    padding: $margin-gap;
     text-align: center;
     color: white;
   }
 
   &__list {
-    padding: 10px;
     text-align: center;
     list-style-type: none;
-  }
-
-  &__list-element {
-    padding: 2.5px;
+    padding: 0 0 15px 0;
   }
 
   &__icon {
@@ -427,5 +437,6 @@ ______   __                              __
   &__address {
     text-align: center;
     color: white;
+    padding-bottom: $margin-gap;
   }
 }
