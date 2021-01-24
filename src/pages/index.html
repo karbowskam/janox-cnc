@@ -405,13 +405,34 @@
           varius montes viverra nibh in adipiscing.
         </p>
       </section>
-      <section class="contact">
-        <h3 id="contact" class="contact__header">Kontakt</h3>
+      <section id="contact" class="contact">
+        <h3 class="contact__header">Kontakt</h3>
         <ul class="contact__list">
-          <li><a href="mailto:mail@mail.pl">mail@mail.pl</a></li>
-          <li><a href="tel">123456789</a></li>
+          <li class="contact__list-element">
+            <span class="contact__icon">@</span>
+            <a class="contact__details" href="mailto:mail@mail.pl"
+              >mail@mail.pl</a
+            >
+          </li>
+          <li class="contact__list-element">
+            <span class="contact__icon">&#9742;</span>
+            <a class="contact__details" href="tel:500136240">500136240</a>
+          </li>
         </ul>
+        <hr />
+        <h3 class="contact__header">Adres</h3>
+        <p class="contact__address">Plac 1 Maja 13, 13-200 Działdowo</p>
       </section>
+      <div class="map">
+        <iframe
+          class="map__address"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d148784.69646319983!2d18.549943345152286!3d54.361206313822855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fd731c14d4fa6f%3A0x9bb9fbf163b7be8d!2zR2RhxYRzaw!5e0!3m2!1spl!2spl!4v1611485975387!5m2!1spl!2spl"
+          style="border: 0"
+          allowfullscreen=""
+          aria-hidden="false"
+          tabindex="0"
+        ></iframe>
+      </div>
     </footer>
     <script src="../js/index.js"></script>
   </body>
