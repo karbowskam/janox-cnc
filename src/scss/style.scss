@@ -335,6 +335,10 @@ ______   __                              __
     text-align: center;
     color: white;
   }
+
+@media (max-width: $mobile-max-width) {
+  border: 0;
+}
 }
 
 /*
@@ -410,5 +414,8 @@ ______   __                              __
     text-align: center;
     color: white;
     padding-bottom: $margin-gap;
+  }
+  @media (max-width: $mobile-max-width) {
+    border: 0;
   }
 }
