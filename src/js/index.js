@@ -1,5 +1,20 @@
 import "../scss/style.scss";
 
+var navigation = document.querySelector(".navigation");
+var hamburger = document.querySelector(".hamburger");
+var navigationHidden = document.querySelector(".navigation__list");
+
+for (var i = 0; i < navigationHidden.childElementCount; i++) {
+  navigationHidden.children[i].addEventListener("click", toggleHamburger);
+}
+
+hamburger.addEventListener("click", toggleHamburger);
+
+function toggleHamburger() {
+  navigation.classList.toggle("navigation--show-nav");
+  hamburger.classList.toggle("hamburger--close");
+}
+
 var curpage = 1;
 var sliding = false;
 var click = true;
@@ -81,7 +96,7 @@ function move() {
       for (j = 1; j <= numOfCircle; j++) {
         c = document.getElementById(transitionPrefixRight + j);
         c.classList.remove(classSteap);
-        c.setAttribute("class", transitionPrefixClass  + " " + classStreak);
+        c.setAttribute("class", transitionPrefixClass + " " + classStreak);
         console.log(classStreak);
       }
     }
@@ -113,7 +128,7 @@ function move() {
         for (j = 1; j <= numOfCircle; j++) {
           c = document.getElementById(transitionPrefixRight + j);
           c.classList.remove(classStreak);
-          c.setAttribute("class", transitionPrefixClass  + " " + classSteap);
+          c.setAttribute("class", transitionPrefixClass + " " + classSteap);
         }
         sliding = true;
       }
