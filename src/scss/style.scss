@@ -10,6 +10,10 @@ $mobile-max-width: 700px;
 $background: hsla(240, 0%, 49%, 0.733);
 $margin-gap: 15px;
 $sec-color: rgba(222, 184, 104, 0.32);
+$font-weight: 500;
+$font-interline: 1.18;
+$font-size-header: 25px;
+$font-size-desc: 20px;
 
 .body {
   font-family: Helvetica, Arial, sans-serif;
@@ -70,25 +74,24 @@ $sec-color: rgba(222, 184, 104, 0.32);
 .navigation {
   position: relative;
   z-index: 100;
-  width: 80%;
-  margin: 0 auto;
-  background: #fff;
+  width: 100%;
+  margin: auto;
+  background: #555f61;
   padding: 17px 0;
-  box-shadow: 0 5px 0 #dedede;
 
   &__list {
     list-style: none;
-    text-align: center;
+    text-align: right;
   }
 
   &__link {
     display: block;
-    padding: 15px;
     text-decoration: none;
-    color: #aaa;
-    font-weight: 800;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 20px;
     text-transform: uppercase;
-    margin: 0 10px;
+    margin: 0 5px;
     position: relative;
   }
 
@@ -99,19 +102,19 @@ $sec-color: rgba(222, 184, 104, 0.32);
   &__link::after {
     transition: all 0.5s;
     position: absolute;
-    bottom: 0;
+    bottom: -5px;
     left: 0;
     right: 0;
     margin: auto;
     width: 0%;
     content: ".";
     color: transparent;
-    background: #333;
-    height: 1px;
+    background: #ffffff;
+    height: 2px;
   }
 
   &__link:hover {
-    color: #555;
+    color:rgb(222, 184, 104);
   }
 
   &__link:hover::after {
@@ -124,6 +127,8 @@ $sec-color: rgba(222, 184, 104, 0.32);
 
     @media (max-width: $mobile-max-width) {
       display: block;
+      text-align: center;
+      line-height: 3;
     }
   }
 
@@ -171,19 +176,24 @@ ______    ______    ______
     background-color: #555f61;
     color: rgb(253, 253, 253);
 
-    &:hover {
-      -webkit-box-shadow: 0 0 18px 7px rgba(222, 184, 104, 0.32);
-      box-shadow: 0 0 18px 7px rgba(222, 184, 104, 0.32);
-    }
   }
 
   &__header {
+    margin-top: 20px;
     padding: 10px;
+    font-size: $font-size-header;
+    font-weight: $font-weight;
+    color:rgb(222, 184, 104);
+    text-transform: uppercase;
     text-align: center;
   }
 
   &__description {
     padding: 20px;
+    text-align:center;
+    font-size: $font-size-desc;
+    line-height: $font-interline;
+    
   }
 }
 
@@ -370,14 +380,18 @@ ______   __                              __
   &__header {
     padding-top: 18px;
     text-align: center;
-    color: #fff;
-    font-size: 30px;
+    color:rgb(222, 184, 104);
+    text-transform: uppercase;
+    font-size: $font-size-header;
+    font-weight: $font-weight;
   }
 
   &__description {
     padding: 30px;
     text-align: center;
     color: white;
+    font-size: $font-size-desc;
+    font-weight: $font-weight;
   }
 
   @media (max-width: $mobile-max-width) {
