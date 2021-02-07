@@ -10,6 +10,10 @@ $mobile-max-width: 700px;
 $background: hsla(240, 0%, 49%, 0.733);
 $margin-gap: 15px;
 $sec-color: rgba(222, 184, 104, 0.32);
+$font-weight: 500;
+$font-interline: 1.18;
+$font-size-header: 25px;
+$font-size-desc: 20px;
 
 .body {
   font-family: Helvetica, Arial, sans-serif;
@@ -123,6 +127,8 @@ $sec-color: rgba(222, 184, 104, 0.32);
 
     @media (max-width: $mobile-max-width) {
       display: block;
+      text-align: center;
+      line-height: 3;
     }
   }
 
@@ -173,12 +179,21 @@ ______    ______    ______
   }
 
   &__header {
+    margin-top: 20px;
     padding: 10px;
+    font-size: $font-size-header;
+    font-weight: $font-weight;
+    color:rgb(222, 184, 104);
+    text-transform: uppercase;
     text-align: center;
   }
 
   &__description {
     padding: 20px;
+    text-align:center;
+    font-size: $font-size-desc;
+    line-height: $font-interline;
+    
   }
 }
 
@@ -365,14 +380,18 @@ ______   __                              __
   &__header {
     padding-top: 18px;
     text-align: center;
-    color: #fff;
-    font-size: 30px;
+    color:rgb(222, 184, 104);
+    text-transform: uppercase;
+    font-size: $font-size-header;
+    font-weight: $font-weight;
   }
 
   &__description {
     padding: 30px;
     text-align: center;
     color: white;
+    font-size: $font-size-desc;
+    font-weight: $font-weight;
   }
 
   @media (max-width: $mobile-max-width) {
