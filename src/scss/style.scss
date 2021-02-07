@@ -70,25 +70,24 @@ $sec-color: rgba(222, 184, 104, 0.32);
 .navigation {
   position: relative;
   z-index: 100;
-  width: 80%;
-  margin: 0 auto;
-  background: #fff;
+  width: 100%;
+  margin: auto;
+  background: #555f61;
   padding: 17px 0;
-  box-shadow: 0 5px 0 #dedede;
 
   &__list {
     list-style: none;
-    text-align: center;
+    text-align: right;
   }
 
   &__link {
     display: block;
-    padding: 15px;
     text-decoration: none;
-    color: #aaa;
-    font-weight: 800;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 20px;
     text-transform: uppercase;
-    margin: 0 10px;
+    margin: 0 5px;
     position: relative;
   }
 
@@ -99,19 +98,19 @@ $sec-color: rgba(222, 184, 104, 0.32);
   &__link::after {
     transition: all 0.5s;
     position: absolute;
-    bottom: 0;
+    bottom: -5px;
     left: 0;
     right: 0;
     margin: auto;
     width: 0%;
     content: ".";
     color: transparent;
-    background: #333;
-    height: 1px;
+    background: #ffffff;
+    height: 2px;
   }
 
   &__link:hover {
-    color: #555;
+    color:rgb(222, 184, 104);
   }
 
   &__link:hover::after {
@@ -171,10 +170,6 @@ ______    ______    ______
     background-color: #555f61;
     color: rgb(253, 253, 253);
 
-    &:hover {
-      -webkit-box-shadow: 0 0 18px 7px rgba(222, 184, 104, 0.32);
-      box-shadow: 0 0 18px 7px rgba(222, 184, 104, 0.32);
-    }
   }
 
   &__header {
