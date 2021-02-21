@@ -87,7 +87,7 @@ $font-size-desc: 20px;
   &__link {
     display: block;
     text-decoration: none;
-    color: #ffffff;
+    color: #fff;
     font-weight: 500;
     font-size: 20px;
     text-transform: uppercase;
@@ -109,12 +109,12 @@ $font-size-desc: 20px;
     width: 0%;
     content: ".";
     color: transparent;
-    background: #ffffff;
+    background: #fff;
     height: 2px;
   }
 
   &__link:hover {
-    color:rgb(222, 184, 104);
+    color: rgb(222, 184, 104);
   }
 
   &__link:hover::after {
@@ -175,7 +175,6 @@ ______    ______    ______
   &__box {
     background-color: #555f61;
     color: rgb(253, 253, 253);
-
   }
 
   &__header {
@@ -183,17 +182,16 @@ ______    ______    ______
     padding: 10px;
     font-size: $font-size-header;
     font-weight: $font-weight;
-    color:rgb(222, 184, 104);
+    color: rgb(222, 184, 104);
     text-transform: uppercase;
     text-align: center;
   }
 
   &__description {
     padding: 20px;
-    text-align:center;
+    text-align: center;
     font-size: $font-size-desc;
     line-height: $font-interline;
-    
   }
 }
 
@@ -380,7 +378,7 @@ ______   __                              __
   &__header {
     padding-top: 18px;
     text-align: center;
-    color:rgb(222, 184, 104);
+    color: rgb(222, 184, 104);
     text-transform: uppercase;
     font-size: $font-size-header;
     font-weight: $font-weight;
