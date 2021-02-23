@@ -163,7 +163,7 @@ ______    ______    ______
 */
 .offers {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   column-gap: $margin-gap;
   row-gap: $margin-gap;
   padding-bottom: $margin-gap;
@@ -174,7 +174,7 @@ ______    ______    ______
   }
 
   &__img {
-    height: 320px;
+    height: 350px;
     width: 100%;
   }
 
@@ -193,7 +193,7 @@ ______    ______    ______
 
   &__box {
     position: relative;
-    height: 320px;
+    height: 350px;
     background-color: #555f61;
     color: rgb(253, 253, 253);
 
