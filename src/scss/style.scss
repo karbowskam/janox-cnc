@@ -442,7 +442,7 @@ ______   __                              __
 */
 .footer {
   display: grid;
-  grid-template-rows: 1fr 2fr;
+  grid-template-columns: 4fr 3fr;
   row-gap: $margin-gap;
   position: relative;
 
@@ -464,9 +464,7 @@ ______   __                              __
 .contact {
   position: relative;
   background-color: #555f61;
-  border-left: 170px solid;
-  border-right: 170px solid;
-  border-color: rgb(39, 39, 39);
+  
 
   &__break {
     width: 80px;
@@ -477,7 +475,8 @@ ______   __                              __
   &__header {
     padding: $margin-gap;
     text-align: center;
-    color: white;
+    color: rgb(222, 184, 104);
+    margin-bottom: 5px;
   }
 
   &__list {
@@ -501,7 +500,11 @@ ______   __                              __
   &__address {
     text-align: center;
     color: white;
-    padding-bottom: $margin-gap;
+    padding-bottom: 8px;
+
+    &--margin-bottom {
+      margin-bottom: 10px;
+    }
   }
 
   @media (max-width: $mobile-max-width) {
