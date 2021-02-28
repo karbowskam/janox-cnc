@@ -29,7 +29,7 @@ var classTran = "slider__tran";
 var classSteap = "slider__steap";
 var classUp = "slider__up";
 var svg = true;
-var numOfSlides = 4;
+var numOfSlides = 3;
 var numOfCircle = 18;
 
 function leftSlide() {
