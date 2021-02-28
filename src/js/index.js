@@ -38,7 +38,7 @@ function leftSlide() {
     console.log("woek");
     sliding = true;
     curpage--;
-    svg = true;
+    svg = false;
     click = false;
     for (var k = 1; k <= numOfSlides; k++) {
       var a1 = document.getElementById(pagePrefix + k);
